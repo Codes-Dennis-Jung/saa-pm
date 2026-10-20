@@ -1,0 +1,22 @@
+key,value,description
+cpi,0.0325,inflation assumption for the return goal
+return_spread,0.03,required real return over CPI
+target_income,0.035,minimum expected cash income
+vol_lo,0.06,lower edge of the risk band
+vol_hi,0.08,upper edge of the risk band
+vol_steps,13.0,grid points across the risk band
+turnover_limit,0.3,one-way turnover cap per rebalance (0 = none)
+hard_return_floor,0.0,1 makes the return goal a hard constraint
+ladder_edge_1,2.0,calls due within 2y are pre-funded in ladder bucket 1
+ladder_edge_2,3.0,calls due in 2-3y in bucket 2; later calls in bucket 3
+ladder_cover,1.0,multiple of scheduled calls to pre-fund
+halflife,36.0,EWMA half-life in months
+shrink,0.25,constant-correlation shrinkage
+uplift,0.15,extra volatility for illiquid sleeves
+max_lookback,120.0,estimation window cap in months
+burn_in_months,48.0,history used before the first backtest decision
+rebalance_months,3.0,liquid rebalance frequency in the backtest
+review_months,12.0,strategic review frequency in the backtest
+bt_vol_steps,7.0,grid points inside the backtest
+forced_sale_extra_bps,50.0,penalty on a forced (distressed) sale
+goal_return_window_months,60.0,rolling window for the return-goal hit rate

@@ -1,0 +1,5 @@
+effective_date,key,value
+2015-12-31,target_income,0.03
+2020-03-31,vol_hi,0.09
+2022-12-31,vol_hi,0.08
+2023-12-31,target_income,0.035

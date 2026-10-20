@@ -1,0 +1,25 @@
+asset,market_value,commitments_undrawn
+Cash,40000000.0,
+US STR,0.0,
+US Govt,36000000.0,
+UK Govt,0.0,
+JP Govt,0.0,
+EU Govt,0.0,
+EM HC,0.0,
+US IG,0.0,
+EU IG,0.0,
+EU HY,0.0,
+US HY,0.0,
+US Dvd Eq,7000000.0,
+US EW Eq,0.0,
+US Nasdaq Eq,8000000.0,
+EU ex UK Eq,0.0,
+EU Dvd Eq,0.0,
+UK Eq,0.0,
+JP Eq,0.0,
+Pac ex JP Eq,0.0,
+EM Eq,0.0,
+Gold,2000000.0,
+Priv Infra,0.0,8000000.0
+Priv Eq,7000000.0,10000000.0
+Priv Debt,0.0,12000000.0

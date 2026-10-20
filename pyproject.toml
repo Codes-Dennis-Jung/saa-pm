@@ -1,0 +1,103 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "saa-pm"
+dynamic = ["version"]
+description = "Goal-based Strategic Asset Allocation with Private Markets: optimiser, funding ladder, walk-forward backtest and side analyses"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Dennis Jung" }]
+keywords = ["asset allocation", "portfolio optimization", "private markets", "cvxpy", "backtest",
+            "strategic asset allocation", "funding ladder", "capital calls"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Typing :: Typed",
+]
+# core: computation only - no plotting or Excel needed
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.2",
+    "scipy>=1.10",
+    "cvxpy>=1.4",
+    "clarabel>=0.6",
+]
+
+[project.optional-dependencies]
+report = ["matplotlib>=3.7", "openpyxl>=3.1"]          # charts + Excel workbook
+dev = ["saa-pm[report]", "pytest>=7", "pytest-cov>=4", "ruff>=0.5", "mypy>=1.8",
+       "pre-commit>=3"]
+notebooks = ["saa-pm[report]", "jupyterlab>=4"]                # run the case-study notebooks
+all = ["saa-pm[report]"]
+
+[project.urls]
+Homepage = "https://github.com/Codes-Dennis-Jung/saa-pm"
+Documentation = "https://github.com/Codes-Dennis-Jung/saa-pm/blob/main/docs/EXAMPLES.md"
+Changelog = "https://github.com/Codes-Dennis-Jung/saa-pm/blob/main/CHANGELOG.md"
+Issues = "https://github.com/Codes-Dennis-Jung/saa-pm/issues"
+
+[project.scripts]
+saa-pm = "saa_pm.cli:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "saa_pm.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+saa_pm = ["py.typed"]
+
+# ------------------------------------------------------------------ tools
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.coverage.run]
+source = ["saa_pm"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "NPY", "PD002", "RUF100"]
+ignore = [
+    "E741",     # short maths names (l, I) are fine in formulas
+    "B905",     # zip() without strict= is intentional for equal-length vectors
+    "UP006", "UP007", "UP035", "UP045",   # keep typing.Optional/Dict for 3.10 readability
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B018"]
+"src/saa_pm/sample_data.py" = ["E501"]   # the asset table reads best on one line per asset
+
+[tool.ruff.lint.isort]
+known-first-party = ["saa_pm"]
+
+[tool.mypy]
+python_version = "3.10"
+files = ["src/saa_pm"]
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+no_implicit_optional = true
+check_untyped_defs = true

@@ -1,0 +1,12 @@
+name,start,end,Global_Equity,EUR_USD,Oil_Brent,Global_Govt,Global_Credit
+Equities -10%,,,-0.1,,,,
+Equities +10%,,,0.1,,,,
+EUR -10% vs USD,,,,-0.1,,,
+EUR +10% vs USD,,,,0.1,,,
+Oil price shock +50%,,,,,0.5,,
+Rates shock (govt bonds -8%),,,,,,-0.08,
+Credit spread widening,,,,,,,-0.06
+Stagflation,,,-0.15,,0.4,-0.06,
+Historical episode 1 (simulated),2015-08-31,2015-11-30,,,,,
+Historical episode 2 (simulated),2019-07-31,2019-10-31,,,,,
+Historical episode 3 (simulated),2023-07-31,2023-10-31,,,,,

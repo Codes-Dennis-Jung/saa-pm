@@ -1,0 +1,29 @@
+# test coverage (contains local absolute paths)
+.coverage
+.coverage.*
+coverage.xml
+
+# results of runs
+results/
+out/
+out_now/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# never commit licensed market data or client documents
+*.pptx
+*.docx
+private_data/

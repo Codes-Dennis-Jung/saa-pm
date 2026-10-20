@@ -1,0 +1,4 @@
+asset,life_years,commitment_period,contribution_rates,bow_factor,yield_rate,drawdown_ratio
+Priv Eq,10,4,0.25|0.50|0.75|1.00,2.8,,0.9
+Priv Infra,10,3,0.40|0.60|1.00,2.0,,0.9
+Priv Debt,7,2,0.50|1.00,1.2,,0.85

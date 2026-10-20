@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "saa-pm: Strategic Asset Allocation with Private Markets"
+type: software
+authors:
+  - family-names: Jung
+    given-names: Dennis
+version: 1.1.0
+date-released: 2026-10-19
+license: MIT
+repository-code: "https://github.com/Codes-Dennis-Jung/saa-pm"
+keywords:
+  - strategic asset allocation
+  - private markets
+  - portfolio optimization
+  - funding ladder
